@@ -91,7 +91,7 @@ void cListCandidate::Xuat() const{
     if(a==nullptr) cout<<"Khong co thi sinh nao"<<endl;
     else{
         for(int i=0; i<n; i++){
-            int sum=a[i].GetToan()+a[i].GetVan()+a[i].GetAnh();
+            double sum=a[i].GetToan()+a[i].GetVan()+a[i].GetAnh();
             if(sum>15) a[i].Xuat();
         }
         cout<<endl;
@@ -99,10 +99,10 @@ void cListCandidate::Xuat() const{
 }
 int partition(cCandidate* &a, int l, int r){
     cCandidate pivot=a[r];
-    int pivot_sum=a[r].GetToan()+a[r].GetVan()+a[r].GetAnh();
+    double pivot_sum=a[r].GetToan()+a[r].GetVan()+a[r].GetAnh();
     int i=l-1;
     for(int j=l; j<r; j++){
-        int sum=a[j].GetToan()+a[j].GetVan()+a[j].GetAnh();
+        double sum=a[j].GetToan()+a[j].GetVan()+a[j].GetAnh();
         if(sum>=pivot_sum){
             ++i; cCandidate temp=a[i];
             a[i]=a[j];
@@ -121,9 +121,9 @@ void QuickSort(cCandidate* &a, int l, int r){
 }
 cCandidate cListCandidate::ThuKhoa() const{
     cCandidate thukhoa=a[0];
-    int nmax=a[0].GetToan()+a[0].GetVan()+a[0].GetAnh();
+    double nmax=a[0].GetToan()+a[0].GetVan()+a[0].GetAnh();
     for(int i=1; i<n; i++){
-        int sum=a[i].GetToan()+a[i].GetVan()+a[i].GetAnh();
+        double sum=a[i].GetToan()+a[i].GetVan()+a[i].GetAnh();
         if(sum>nmax){
             nmax=sum;
             thukhoa=a[i];
